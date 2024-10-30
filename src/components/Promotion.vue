@@ -21,7 +21,7 @@ export default {
     // tp02
     methods: {
         shopHere() {
-            alert("No Need to wait: " + this.caption);
+            alert("No Need to wait: " + this.TittlePromotion);
         }
     }
 
