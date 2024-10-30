@@ -22,6 +22,7 @@
   <script>
   import Category from './components/Category.vue';
   import Promotion from './components/Promotion.vue';
+
   export default{
     name: 'App',
     components: {

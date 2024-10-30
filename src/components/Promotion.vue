@@ -1,52 +1,57 @@
 <template>
-    <div  class="Promo" :style="{backgroundColor: bgColorSecond}">
+    <div class="c0" :style="{ backgroundColor: bgColorSecond }">
         <img :src="bgImage" alt="">
         <h2>{{ TittlePromotion }}</h2>
-        <Button :buttonText="'Show Now'"/>
-
+        <!-- tp02 -->
+        <Button :buttonText="'ShopNow'" :clickHandler="shopHere" />
     </div>
 </template>
-
 <script>
 import Button from './Button.vue';
 export default {
     name: "Promotion",
-    components:{
+    props: {
+        bgImage: String,
+        TittlePromotion: String,
+        bgColorSecond: String
+    },
+    components: {
         Button,
     },
-    props:{
-        bgImage:String,
-        bgColorSecond:String,
-        TittlePromotion: String,
-
+    // tp02
+    methods: {
+        shopHere() {
+            alert("No Need to wait: " + this.caption);
+        }
     }
+
 }
 </script>
-
 <style scoped>
-    .Promo{
-    width: 23.5rem;
-    height: 16rem;
-    background-color: aqua;
-    margin-top: 2rem;
+.c0 {
+    width: 30%;
+    height: 50%;
+    margin-top: 2px;
     border-radius: 20px;
     position: relative;
-    }
-    .Promo img{
-        width:75%;
-        height: 75%;
-         object-fit: contain;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-    .Promo h2{
-        color: black;
-        position: absolute;
-        top: 15%;
-        left: 10%;
-        width: 50%;
 
-    }
+}
 
+.c0 img {
+    width: 80%;
+    height: 75%;
+    object-fit: contain;
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+}
+
+.c0 h2 {
+    color: black;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 50%;
+
+}
 </style>
