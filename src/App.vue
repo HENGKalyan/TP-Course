@@ -47,9 +47,45 @@
           {bgImage:'src/image/promotion/onion.png',bgColorSecond:'#F0E8D5',TittlePromotion:"Everyday Fresh & Clean with Our Products"},
           {bgImage:'src/image/promotion/milk.png',bgColorSecond:'#F3E8E8',TittlePromotion:"Make your Breakfast Healthy and Easy"},
           {bgImage:'src/image/promotion/vegetable.png',bgColorSecond:'#E7EAF3',TittlePromotion:"The best Organic Products Online"},
-        ]
+        ],
+
+        
+      //TP02
+      Category: [], // Data from API
+      promotion: [], // Data from API
+      loading: true, // Flag to indicate loading state
+      error: false, // Flag to indicate an error
       };
     },
+    computed: {
+    displayedProducts() {
+      return this.loading ? this.products : this.category.length > 0 ? this.category : this.products;
+    },
+    displayedPromotions() {
+      return this.loading ? this.promotions : this.promotion.length > 0 ? this.promotion : this.promotions;
+    },
+  },
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      Promise.all([
+        axios.get('http://localhost:3000/api/categories'),
+        axios.get('http://localhost:3000/api/promotions'),
+      ])
+        .then(([categoriesResponse, promotionsResponse]) => {
+          this.category = categoriesResponse.data;
+          this.promotion = promotionsResponse.data;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+          this.error = true;
+          this.loading = false; // Set loading to false even on error
+        });
+    },
+  },
   };
   </script>
 
