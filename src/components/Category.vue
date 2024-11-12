@@ -1,11 +1,11 @@
 <template>
-    <div class="card" :style="{backgroundColor:bgColor}">
+    <div class="card" :style="{backgroundColor:color}">
         <div class="card-img">
-            <img :src="imgSrc" :alt="title">
+            <img :src="image" :alt="title">
         </div>
         <div class="card-text">
-            <h4>{{title }}</h4>
-            <p>{{ items }}</p>
+            <h4>{{title}}</h4>
+            <p>{{ productCount }}</p>
         </div>
     </div>
 </template>
@@ -14,10 +14,10 @@
 export default {
     name: "Category",
     props: {
-        imgSrc:String,
+        image:String,
         title: String,
-        items: String,
-        bgColor: String
+        productCount: String,
+        color: String
     },
 }
 </script>
