@@ -13,20 +13,18 @@
 import axios from 'axios';
 import Category from './components/Category.vue';
 import Promotion from './components/Promotion.vue';
+import { useProductStore } from './stores/productStore';
 
 export default {
   name: 'App',
-  components: {
-    Category,
-    Promotion,
+
+  setup() {
+    const productStore = useProductStore();
+    productStore.initializeData();
+
+    return { productStore };
   },
-  data() {
-    return {
-      categories: [],
-      promotions: [],
-      error: null, // Add an error property
-    };
-  },
+  
   mounted() {
     axios.get('http://localhost:3000/api/categories')
       .then(response => {
