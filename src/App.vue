@@ -1,22 +1,22 @@
 <template>
   <div class="container">
-    <div class="block0">
+    <div class="titleFeatured">
       <h2 class="menu-title">Featured Categories</h2>
       <Menu :menuItems="store.groups" />
     </div>
-    <div class="block1">
+    <div class="category-ls">
       <Category v-for="(category, index) in categories" :key="index" :image="category.image" :name="category.name"
         :product-count="category.productCount" :color="category.color" />
     </div>
-    <div class="block2">
+    <div class="promotionProduct">
       <Promotion v-for="(promotion, index1) in promotions" :key="index1" :image="promotion.image"
         :title="promotion.title" :color="promotion.color" />
     </div>
-    <div class="block0 block-1">
+    <div class="titleFeature productContainer">
       <h2 class="menu-title">Popular Products</h2>
       <Menu :menuItems="store.groups" />
     </div>
-    <product class="block-1"/>
+    <product class="productContainer"/>
   </div>
 </template>
 
@@ -63,51 +63,60 @@ export default {
 
 <style>
 .container {
-  width: 200vw;
-  height: 110vh;
+  
+  width: 1200px;
+  height: 2000px;
   padding: 10px;
+  background-color: white;
 
 }
 
-.block1 {
+.category-ls {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 5px;
   width: 100%;
-  height: 20%;
+  height: 200px;
   padding: 10px;
+  
 }
-
-.block2 {
+.promotionProduct {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  height: 59%;
+  height: 500px;
   padding: 10px;
+  margin-top: 0px;
 }
-.block0{
-
+.titleFeatured{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px; 
-  
 }
-.block-1{
+.productContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px; 
   position: relative;
   bottom: 250px;
+  
 }
+
 .menu-title {
+  
   font-size: 26px;
   font-weight: 600;
   color: #333;
-  margin: 0;
 }
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
   padding-top: 20px;
+  
+
 }
 </style>

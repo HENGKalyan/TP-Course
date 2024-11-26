@@ -3,6 +3,7 @@
         <!-- tp02 -->
         <img :src="image" alt="">
         <h2>{{ title }}</h2>
+        
         <!-- tp02 -->
         <Button :buttonText="'ShopNow'" :clickHandler="shopHere" />
     </div>
@@ -33,7 +34,7 @@ export default {
 <style scoped>
 .c0 {
     width: 30%;
-    height: 50%;
+    height: 40%;
     margin-top: 2px;
     border-radius: 20px;
     position: relative;
@@ -41,7 +42,7 @@ export default {
 }
 
 .c0 img {
-    width: 80%;
+    width: 70%;
     height: 75%;
     object-fit: contain;
     position: absolute;
@@ -55,6 +56,8 @@ export default {
     top: 10%;
     left: 10%;
     width: 50%;
+    font-size: large;
+    font-weight: 700;
 
 }
 </style>
