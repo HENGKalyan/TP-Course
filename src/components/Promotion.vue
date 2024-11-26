@@ -1,5 +1,6 @@
 <template>
     <div class="c0" :style="{ backgroundColor: color }">
+        <!-- tp02 -->
         <img :src="image" alt="">
         <h2>{{ title }}</h2>
         <!-- tp02 -->
@@ -8,12 +9,14 @@
 </template>
 <script>
 import Button from './Button.vue';
+
 export default {
     name: "Promotion",
+    //tp02
     props: {
-        image: String,
         title: String,
-        color: String
+        color: String,
+        image: String
     },
     components: {
         Button,
@@ -21,7 +24,7 @@ export default {
     // tp02
     methods: {
         shopHere() {
-            alert("No Need to wait: " + this.TittlePromotion);
+            alert("No Need to wait: " + this.caption);
         }
     }
 
