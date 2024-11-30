@@ -34,11 +34,11 @@ export default {
 <style scoped>
 .c0 {
     width: 30%;
-    height: 40%;
+    height: 100%;
     margin-top: 2px;
     border-radius: 20px;
     position: relative;
-
+    
 }
 
 .c0 img {
@@ -58,6 +58,7 @@ export default {
     width: 50%;
     font-size: large;
     font-weight: 700;
+    
 
 }
 </style>
