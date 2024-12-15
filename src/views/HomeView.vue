@@ -28,9 +28,11 @@
   import Promotion from '../components/Promotion.vue';
   import product from '../components/Product.vue';
   import Menu from '../components/Menu.vue';
+  import ShowCase from '@/components/ShowCase.vue';
   import { useProductStore } from '../stores/product_store';
   import { mapState } from 'pinia';
   import { computed, ref } from 'vue';
+  import MenuItem from '@/views/MenuItem.vue';
   
   
   export default {
@@ -39,14 +41,19 @@
       Category,
       Promotion,
       Menu,
-      product
+      product,
+      ShowCase,
+      MenuItem,
     },
 
     setup() {
       const store = useProductStore();
       const selectedCategoryGroup = ref(null);
       const selectedProductGroup = ref(null);
-  
+
+      const resetProductSelection = () => {
+      selectedProductGroup.value = null;
+    };
       // Handle group click and set selected group
       const handleCategoryGroupClick = (group) => {
         selectedCategoryGroup.value = selectedCategoryGroup.value === group ? null : group;
@@ -77,6 +84,7 @@
         handleProductGroupClick,
         filteredCategories,
         filteredProducts,
+        resetProductSelection,
       };
     },
     async mounted() {

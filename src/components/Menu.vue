@@ -46,16 +46,6 @@ export default {
 </script>
 
 <style>
-
-/* .menu-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem; 
-} */
-
-
-
 .menu {
   display: flex;
 }

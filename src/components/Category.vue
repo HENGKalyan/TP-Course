@@ -11,20 +11,42 @@
         </div>
     </div>
 </template>
+
 <script>
-
-
 export default {
     name: "Category",
-    //tp02
     props: {
-        id: String,
-        name: String,
-        image: String,
-        productCount: String,
-        color: String
-    }
-}
+        id: {
+            type: String,
+            required: true,
+        },
+        name: {
+            type: String,
+            required: true,
+        },
+        image: {
+            type: String,
+            required: true,
+        },
+        productCount: {
+            type: String,
+            required: true,
+        },
+        color: {
+            type: String,
+            default: "#fff",
+        },
+    },
+    methods: {
+        goToCategoryDetail() {
+            if (this.id) {
+                this.$router.push({ name: "categoryview", params: { id: this.id } });
+            } else {
+                console.error("Category ID is missing");
+            }
+        },
+    },
+};
 </script>
 <style scoped>
 .categories {
