@@ -2,15 +2,12 @@
   <div class="product-list">
     <div class="product-item" @click="goToProductDetail">
       <!-- Product Image -->
-      <img
-      :src="'http://localhost:3000/' + JSON.parse(product.image)[0]"
-    />
-      
+       <img class="product-image " :src="product.image" alt="">
       <!-- Product Details -->
       <div class="product-details">
         <h3>{{ product.name }}</h3>
         <div class="star">
-          ★★★★☆
+          ★★★★☆  
           <div class="rating">({{ product.rating }})</div>
         </div>
 

@@ -1,5 +1,7 @@
 <template>
     <div class="container">
+      <menu-item/>
+      <ShowCase/>
       <div class="titleFeatured">
         <h2 class="menu-title">Featured Categories</h2>
         <Menu :menuItems="store.groups" @menuItemSelected="handleCategoryGroupClick" />
@@ -16,7 +18,6 @@
         <h2 class="menu-title">Popular Products</h2>
         <Menu :menuItems="store.groups"  @menuItemSelected="handleProductGroupClick"/>
       </div>
-
       <div class="product-grid">
         <product v-for="product in filteredProducts" :key="product.id" :product="product" />
     </div>
@@ -73,7 +74,8 @@
       const filteredProducts = computed(() =>
         selectedProductGroup.value
           ? store.products.filter((product) => product.group === selectedProductGroup.value)
-          : store.products
+          : store.products,
+          console.log(store.products)
       );
   
       return {
