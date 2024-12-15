@@ -1,6 +1,6 @@
 <template>
     <div class="showcase">
-        <img src="../image/icons/bigpicFull.png" alt="">
+        <img class="image" src="../image/icons/bigpicFull.png" alt="big pic">
     </div>
 </template>
 <script>
@@ -11,15 +11,14 @@ export default {
 
 </script>
 <style>
+.image{
+    width: 100%;
+    height: 100%;
+}
 .showcase {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2%;
-    
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
 }
-.showcase img{
-    width: 1480px;
-}
+
 </style>

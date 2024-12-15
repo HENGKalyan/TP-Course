@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <menu-item/>
+      <MenuItem/>
       <ShowCase/>
       <div class="titleFeatured">
         <h2 class="menu-title">Featured Categories</h2>

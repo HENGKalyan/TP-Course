@@ -1,22 +1,22 @@
 <template>
-    <div>
+    <div class="Bcontainer">
         <div class="navbar">
-            <img src="./image/icons/logo.png" alt="Logo">            <SearchBox class="searchbar" />
+            <img  src="../image/icons/logo.png" alt="Logo icon"> <SearchBox class="searchbar" />
             <div class="setting">
                 <div class="content">
-                    <img src="./image/icons/acc.png" alt="Account Icon">
+                    <img src="../image/icons/acc.png" alt="Account Icon">
                     <p>Account</p>
                 </div>
                 <div class="content">
-                    <img src="./image/icons/compare.png" alt="Compare Icon">
+                    <img src="../image/icons/compare.png" alt="Compare Icon">
                     <p>Compare</p>
                 </div>
                 <div class="content">
-                    <img src="./image/icons/wishlist.png" alt="Wishlist Icon">
+                    <img src="../image/icons/wishlist.png" alt="Wishlist Icon">
                     <p>Wishlist</p>
                 </div>
                 <div class="content">
-                    <img src="./image/icons/carts.png" alt="Cart Icon">
+                    <img src="../image/icons/carts.png" alt="Cart Icon">
                     <p>Cart</p>
                 </div>
             </div>
@@ -24,7 +24,7 @@
         <hr>
         <nav class="contain">
             <div class="category-dropdown">
-                <img src="./image/icons/browse.png" alt="Dropdown Icon">
+                <img src="../image/icons/browse.png" alt="Dropdown Icon">
                 <select v-model="categorySelected" id="browse" @change="goToCategory">
                     <option disabled value="">Browse all the categories</option>
                     <option value="all">All Categories</option>
@@ -39,7 +39,7 @@
             <ul class="nav-links">
                 <li>
                     <router-link :to="{ name: 'categoryview', params: { id: 'hot' } }">
-                        <img src="./image/icons/flame.png" alt="Hot Deals Icon">Hot Deals
+                        <img src="../image/icons/flame.png" alt="Hot Deals Icon">Hot Deals
                     </router-link>
                 </li>
                 <li>
@@ -107,6 +107,11 @@ export default {
 </script>
 
 <style>
+.Bcontainer{
+    width: 100%;
+    height: 200px;
+}
+
 p {
     font-size: 18px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -119,19 +124,22 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     font-size: 18px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 80px;
 }
 
 .navbar {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
     font-size: 18px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 50px;
 }
 
 .navbar img {
@@ -203,8 +211,9 @@ hr {
 }
 
 .category-dropdown {
-    padding: 10px;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 230px;
     font-size: 1rem;
     border: 1px solid #ffffff;
     border-radius: 10px;
