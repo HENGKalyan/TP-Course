@@ -1,8 +1,8 @@
 <template>
-  <div class = "app" id="app">
+  <div class="app" id="app">
     <Header />
     <div class="layout">
-      <Menu />
+      <Menu :currentPage="currentPage" />
       <div class="content">
         <router-view />
       </div>
@@ -18,6 +18,24 @@ import Footer from './components/footer.vue';
 
 export default {
   components: { Header, Menu, Footer },
+  data() {
+    return {
+      currentPage: 1,
+    };
+  },
+  methods: {
+    setPage(page) {
+      this.currentPage = page;
+    },
+  },
+  watch: {
+    $route(to) {
+      const pageMatch = to.path.match(/\/page(\d+)/);
+      if (pageMatch) {
+        this.currentPage = Number(pageMatch[1]);
+      }
+    },
+  },
 };
 </script>
 
@@ -27,21 +45,16 @@ export default {
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  height: 1000px;
-  border: solid black;
-
 }
 
 .layout {
   display: flex;
   flex: 1;
-  
 }
 
 .content {
   flex: 1;
   padding: 20px;
   border-left: 1px solid #ddd;
-  
 }
 </style>
